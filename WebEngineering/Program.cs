@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using System.Runtime.CompilerServices;
 using WebEngineering.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,6 +9,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<Context>(options => options.UseSqlServer(builder.Configuration.GetConnectionString(("MyDB"))));
 
 var app = builder.Build();
+
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
