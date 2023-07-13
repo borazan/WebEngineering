@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using WebEngineering.Areas.Identity.Data;
 using WebEngineering.Models;
+using System.Reflection.Emit;
 
 namespace WebEngineering.Data;
 
@@ -22,6 +23,22 @@ public class IdentityContext : IdentityDbContext<User>
         // Customize the ASP.NET Identity model and override the defaults if needed.
         // For example, you can rename the ASP.NET Identity table names and more.
         // Add your customizations after calling base.OnModelCreating(builder);
+
+        PasswordHasher<User> passwordHasher = new PasswordHasher<User>();
+        User user = new User() { Id = Guid.NewGuid().ToString(), UserName = "demo01" };
+        user.NormalizedUserName = user.UserName.ToUpper();
+        user.PasswordHash = passwordHasher.HashPassword(user, "demo123");
+        builder.Entity<User>().HasData(user);
+
+        IdentityRole role = new IdentityRole() { Id = Guid.NewGuid().ToString(), Name = "Manager" };
+        role.NormalizedName = role.Name.ToUpper();
+        builder.Entity<IdentityRole>().HasData(role);
+
+        IdentityUserRole<string> userRole = new IdentityUserRole<string>() { RoleId = role.Id, UserId = user.Id };
+        builder.Entity<IdentityUserRole<string>>().HasData(userRole);
+
+
+
 
         List<string> materials = new List<string>()
 {
@@ -75,11 +92,11 @@ public class IdentityContext : IdentityDbContext<User>
             TimeSpan timeSpan = endDate - startDate;
             TimeSpan randomTimeSpan = new TimeSpan(0, random.Next(0, (int)timeSpan.TotalMinutes), 0);
 
-            DateTime randomDate = startDate + randomTimeSpan; //used for Bestellung
+            DateTime bestellungRandomDate = startDate + randomTimeSpan; //used for Bestellung
 
             int randomWeeks = random.Next(1, 3);
             TimeSpan randomIncrement = TimeSpan.FromDays(randomWeeks * 7);
-            DateTime lieferungRandomDate = randomDate + randomIncrement; //used for Lieferung
+            DateTime lieferungRandomDate = bestellungRandomDate + randomIncrement; //used for Lieferung
 
 
             Produkt produkt = new Produkt()
@@ -91,7 +108,7 @@ public class IdentityContext : IdentityDbContext<User>
             Bestellung bestellung = new Bestellung()
             {
                 Id = i,
-                Date = randomDate,
+                Date = bestellungRandomDate,
                 ProduktId = produkt.Id,
                 Menge = random.Next(1, 300)
             };
@@ -109,7 +126,6 @@ public class IdentityContext : IdentityDbContext<User>
             builder.Entity<Bestellung>().HasData(bestellung); // add to DB
             builder.Entity<Lieferung>().HasData(lieferung); // add to DB
 
-            // menge yanlis, Lieferung klass'i mengeyi Bestellung classindan direk almali o bestellung icin!  
         }
     }
 }

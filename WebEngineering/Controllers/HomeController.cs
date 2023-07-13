@@ -18,7 +18,6 @@ namespace WebEngineering.Controllers
 
         public IActionResult Index()
         {
-
             return View();
         }
 
