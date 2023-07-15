@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using WebEngineering.Areas.Identity.Data;
 using WebEngineering.Models;
 using System.Reflection.Emit;
+using System;
 
 namespace WebEngineering.Data;
 
@@ -12,6 +13,7 @@ public class IdentityContext : IdentityDbContext<User>
     public DbSet<Produkt> Produkte { get; set; }
     public DbSet<Bestellung> Bestellungen { get; set; }
     public DbSet<Lieferung> Lieferungen { get; set; }
+    public DbSet<WebEngineering.Models.ViewModel>? ViewModel { get; set; }
     public IdentityContext(DbContextOptions<IdentityContext> options)
         : base(options)
     {
@@ -20,21 +22,38 @@ public class IdentityContext : IdentityDbContext<User>
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);
-        // Customize the ASP.NET Identity model and override the defaults if needed.
-        // For example, you can rename the ASP.NET Identity table names and more.
-        // Add your customizations after calling base.OnModelCreating(builder);
 
         PasswordHasher<User> passwordHasher = new PasswordHasher<User>();
-        User user = new User() { Id = Guid.NewGuid().ToString(), UserName = "demo01" };
-        user.NormalizedUserName = user.UserName.ToUpper();
-        user.PasswordHash = passwordHasher.HashPassword(user, "demo123");
-        builder.Entity<User>().HasData(user);
+        User user1 = new User() { Id = Guid.NewGuid().ToString(), UserName = "demo01@gmail.com" }; // user creation
+        user1.NormalizedUserName = user1.UserName.ToUpper();
+        user1.PasswordHash = passwordHasher.HashPassword(user1, "demo01");
+        builder.Entity<User>().HasData(user1);
 
-        IdentityRole role = new IdentityRole() { Id = Guid.NewGuid().ToString(), Name = "Manager" };
+        User user2 = new User() { Id = Guid.NewGuid().ToString(), UserName = "demo02@gmail.com" }; // user creation
+        user2.NormalizedUserName = user2.UserName.ToUpper();
+        user2.PasswordHash = passwordHasher.HashPassword(user2, "demo02");
+        builder.Entity<User>().HasData(user2);
+
+        User user3 = new User() { Id = Guid.NewGuid().ToString(), UserName = "demo03@gmail.com" }; // user creation
+        user3.NormalizedUserName = user3.UserName.ToUpper();
+        user3.PasswordHash = passwordHasher.HashPassword(user3, "demo03");
+        builder.Entity<User>().HasData(user3);
+
+        User user4 = new User() { Id = Guid.NewGuid().ToString(), UserName = "demo04@gmail.com" }; // user creation
+        user4.NormalizedUserName = user4.UserName.ToUpper();
+        user4.PasswordHash = passwordHasher.HashPassword(user4, "demo04");
+        builder.Entity<User>().HasData(user4);
+
+        User admin = new User() { Id = Guid.NewGuid().ToString(), UserName = "admin@gmail.com" }; // user creation
+        admin.NormalizedUserName = admin.UserName.ToUpper();
+        admin.PasswordHash = passwordHasher.HashPassword(admin, "admin");
+        builder.Entity<User>().HasData(admin);
+
+        IdentityRole role = new IdentityRole() { Id = Guid.NewGuid().ToString(), Name = "Manager" }; // role creation
         role.NormalizedName = role.Name.ToUpper();
         builder.Entity<IdentityRole>().HasData(role);
 
-        IdentityUserRole<string> userRole = new IdentityUserRole<string>() { RoleId = role.Id, UserId = user.Id };
+        IdentityUserRole<string> userRole = new IdentityUserRole<string>() { RoleId = role.Id, UserId = admin.Id }; // assign a user a role
         builder.Entity<IdentityUserRole<string>>().HasData(userRole);
 
 
@@ -81,30 +100,44 @@ public class IdentityContext : IdentityDbContext<User>
             "riemen",
             "gehäuse",
 };
-        for (int i = -1; i >= -80; i--)
+        List<Produkt> products = new List<Produkt>();
+        Random random = new Random();
+
+        for (int i = -1; i >= -20; i--) // generate random product list
         {
-            Random random = new Random();
             string productName = $"{materials[random.Next(materials.Count)]}{parts[random.Next(parts.Count)]}";
-
-            DateTime startDate = new DateTime(2022, 1, 1);
-            DateTime endDate = new DateTime(2023, 12, 31);
-
-            TimeSpan timeSpan = endDate - startDate;
-            TimeSpan randomTimeSpan = new TimeSpan(0, random.Next(0, (int)timeSpan.TotalMinutes), 0);
-
-            DateTime bestellungRandomDate = startDate + randomTimeSpan; //used for Bestellung
-
-            int randomWeeks = random.Next(1, 3);
-            TimeSpan randomIncrement = TimeSpan.FromDays(randomWeeks * 7);
-            DateTime lieferungRandomDate = bestellungRandomDate + randomIncrement; //used for Lieferung
-
 
             Produkt produkt = new Produkt()
             {
                 Id = i,
                 Name = productName
             };
+            products.Add(produkt); // can't access DbSet directly on model creation
+            builder.Entity<Produkt>().HasData(produkt); // add to DB
 
+        }
+
+        for (int i = -1; i >= -20; i--) // generate Lieferungen
+        {
+            Produkt produkt = products[random.Next(products.Count())];
+            DateTime lieferungRandomDate = getRandomDate();
+
+            Lieferung lieferung = new Lieferung()
+            {
+                Id = i,
+                Date = lieferungRandomDate,
+                ProduktId = produkt.Id,
+                Menge = random.Next(500, 5000)
+            };
+
+            builder.Entity<Lieferung>().HasData(lieferung); // add to DB 
+        }
+
+        for (int i = -1; i >= -80; i--) // generate Bestellungen
+        {
+            Produkt produkt = products[random.Next(products.Count())];
+
+            DateTime bestellungRandomDate = getRandomDate();
             Bestellung bestellung = new Bestellung()
             {
                 Id = i,
@@ -113,19 +146,18 @@ public class IdentityContext : IdentityDbContext<User>
                 Menge = random.Next(1, 300)
             };
 
-            Lieferung lieferung = new Lieferung()
-            {
-                Id = i,
-                Date = lieferungRandomDate,
-                ProduktId = produkt.Id,
-                BestellungId = bestellung.Id,
-                Menge = bestellung.Menge
-            };
-
-            builder.Entity<Produkt>().HasData(produkt); // add to DB
             builder.Entity<Bestellung>().HasData(bestellung); // add to DB
-            builder.Entity<Lieferung>().HasData(lieferung); // add to DB
-
         }
+    }
+    public DateTime getRandomDate(int startYear = 2022, int endYear = 2023)
+    {
+        Random random = new Random();
+        DateTime startDate = new DateTime(startYear, 1, 1);
+        DateTime endDate = new DateTime(endYear, 12, 31);
+
+        TimeSpan timeSpan = endDate - startDate;
+        TimeSpan randomTimeSpan = new TimeSpan(0, random.Next(0, (int)timeSpan.TotalMinutes), 0);
+
+        return (startDate + randomTimeSpan);
     }
 }
