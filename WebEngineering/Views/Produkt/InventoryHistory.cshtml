@@ -1,0 +1,60 @@
+﻿@model WebEngineering.Models.ProduktViewModel
+
+@{
+    ViewData["Title"] = "Inventory History";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h1>Product Inventory History</h1>
+
+<div id="areaChart" style="width: 100%; height: 400px;"></div>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+    google.charts.load('current', { 'packages': ['corechart'] });
+    google.charts.setOnLoadCallback(drawAreaChart);
+
+    function drawAreaChart() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('date', 'Date');
+        data.addColumn('number', 'Bestand');
+
+        // Retrieve the datapoints from the ViewModel
+        var viewModel = @Html.Raw(Json.Serialize(Model));
+        var datapoints = viewModel.datapoints;
+        console.log(datapoints);
+
+        // Add data to the chart
+        for (var i = 0; i < datapoints.length; i++) {
+            var date = new Date(datapoints[i].date); // Convert the date string to a Date object
+            var bestand = datapoints[i].bestand;
+            data.addRow([date, bestand]);
+            console.log(date + bestand)
+        }
+
+        var options = {
+
+            title: 'Inventory History',
+            hAxis: {
+                title: 'Date',
+                format: "MMM ''yy" // Customize the date format as needed
+            },
+            vAxis: {
+                title: 'Bestand'
+            },
+            chartArea: {
+                width: '80%',
+                height: '70%'
+            },
+            legend: {
+                position: 'none'
+            },
+            series: {
+                0: { color: '#4285F4' } // Customize the area chart color
+            },
+            areaOpacity: 0.7 // Set the opacity of the area below the line
+        };
+
+        var chart = new google.visualization.AreaChart(document.getElementById('areaChart'));
+        chart.draw(data, options);
+    }
+</script>
