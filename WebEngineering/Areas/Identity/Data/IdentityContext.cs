@@ -13,7 +13,6 @@ public class IdentityContext : IdentityDbContext<User>
     public DbSet<Produkt> Produkte { get; set; }
     public DbSet<Bestellung> Bestellungen { get; set; }
     public DbSet<Lieferung> Lieferungen { get; set; }
-    public DbSet<WebEngineering.Models.ViewModel>? ViewModel { get; set; }
     public IdentityContext(DbContextOptions<IdentityContext> options)
         : base(options)
     {

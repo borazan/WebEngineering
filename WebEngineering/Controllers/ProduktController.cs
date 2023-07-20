@@ -24,22 +24,90 @@ namespace WebEngineering.Controllers
         // GET: Produkt
         public async Task<IActionResult> Index()
         {
-              return _context.Produkte != null ? 
-                          View(await _context.Produkte.ToListAsync()) :
-                          Problem("Entity set 'IdentityContext.Produkte'  is null.");
+            return _context.Produkte != null ?
+                        View(await _context.Produkte.ToListAsync()) :
+                        Problem("Entity set 'IdentityContext.Produkte'  is null.");
         }
 
-        public IActionResult InventoryHistory(int produktId)
+        public IActionResult InventoryHistory(int? id)
         {
             // Retrieve the necessary data for the inventory history
             // You will need to query the "Lieferungen" and "Bestellungen" models
             // to get the delivery and shipment logs for the specific product.
             // Calculate the inventory history based on the logs.
-
             // Pass the inventory history data to the view
 
             return View();
         }
+
+        public async Task<IActionResult> ProductAverages()
+        {
+            if (_context.Produkte == null)
+            {
+                return NotFound();
+            }
+
+            var viewModel = new AveragesViewModel();
+            var produkte = _context.Produkte.ToList();
+            var lieferungAverage = 0;
+            var bestellungAverage = 0;
+
+            foreach (Produkt produkt in produkte)
+            {
+                var produktPlus = new ProduktPlus();
+
+                var bestellungen = await _context.Bestellungen //get all Bestellungen associated with the produkt
+                .Where(x => x.ProduktId == produkt.Id)
+                .ToListAsync();
+
+                var lieferungen = await _context.Lieferungen //get all Lieferungen associated with the produkt
+                .Where(y => y.ProduktId == produkt.Id)
+                .ToListAsync();
+
+                int count = 0;
+                int total = 0;
+
+                foreach (Bestellung bestellung in bestellungen) 
+                {
+                    count++;
+                    total += bestellung.Menge;
+                }
+
+                if (total == 0) // catch division by zero
+                {
+                    bestellungAverage = 0;
+                } else
+                {
+                    bestellungAverage = total / count;
+                }
+                
+                count = 0;
+                total = 0;
+                foreach (Lieferung lieferung in lieferungen)
+                {
+                    count++;
+                    total += lieferung.Menge;
+                }
+
+                if (total == 0) // catch division by zero
+                {
+                    lieferungAverage = 0;
+                } else
+                {
+                    lieferungAverage = total / count;
+                }
+
+                produktPlus.name = produkt.Name;
+                produktPlus.lieferungAverage = lieferungAverage;
+                produktPlus.bestellungAverage = bestellungAverage;
+                viewModel.produkte.Add(produktPlus);
+            }
+
+            return View(viewModel);
+        }
+
+
+
 
         // GET: Produkt/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -51,6 +119,7 @@ namespace WebEngineering.Controllers
 
             var produkt = await _context.Produkte
                 .FirstOrDefaultAsync(m => m.Id == id);
+
             if (produkt == null)
             {
                 return NotFound();
@@ -164,14 +233,14 @@ namespace WebEngineering.Controllers
             {
                 _context.Produkte.Remove(produkt);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool ProduktExists(int id)
         {
-          return (_context.Produkte?.Any(e => e.Id == id)).GetValueOrDefault();
+            return (_context.Produkte?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }

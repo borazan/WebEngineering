@@ -1,0 +1,43 @@
+﻿@model WebEngineering.Models.AveragesViewModel
+
+@{
+    ViewData["Title"] = "Product Averages";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Product Averages</h1>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+<div id="barChart" style="width: 100%; height: 100%;"></div>
+
+<script type="text/javascript">
+    google.charts.load('current', { 'packages': ['bar'] });
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Produktname');
+        data.addColumn('number', 'Bestellung Average');
+        data.addColumn('number', 'Lieferung Average');
+
+        var viewModel = @Html.Raw(Json.Serialize(Model));
+        var produkte = viewModel.produkte;
+
+        for (var i = 0; i < produkte.length; i++) {
+            var name = produkte[i].name;
+            var bestellungAverage = produkte[i].bestellungAverage;
+            var lieferungAverage = produkte[i].lieferungAverage;
+
+            data.addRow([name, bestellungAverage, lieferungAverage]);
+        }
+
+        var options = {
+            bars: 'horizontal',
+            height: 800 // Set the height of the chart container
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('barChart'));
+        chart.draw(data, options);
+    }
+</script>
