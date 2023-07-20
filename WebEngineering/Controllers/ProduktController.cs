@@ -29,6 +29,18 @@ namespace WebEngineering.Controllers
                           Problem("Entity set 'IdentityContext.Produkte'  is null.");
         }
 
+        public IActionResult InventoryHistory(int produktId)
+        {
+            // Retrieve the necessary data for the inventory history
+            // You will need to query the "Lieferungen" and "Bestellungen" models
+            // to get the delivery and shipment logs for the specific product.
+            // Calculate the inventory history based on the logs.
+
+            // Pass the inventory history data to the view
+
+            return View();
+        }
+
         // GET: Produkt/Details/5
         public async Task<IActionResult> Details(int? id)
         {

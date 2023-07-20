@@ -61,13 +61,14 @@ namespace WebEngineering.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,ProduktId,Date,Menge")] Lieferung lieferung)
         {
+
             if (ModelState.IsValid)
             {
                 _context.Add(lieferung);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ProduktId"] = new SelectList(_context.Produkte, "Id", "Id", lieferung.ProduktId);
+            ViewData["ProduktId"] = new SelectList(_context.Produkte, "Id", "Name", lieferung.ProduktId);
             return View(lieferung);
         }
 
@@ -157,14 +158,14 @@ namespace WebEngineering.Controllers
             {
                 _context.Lieferungen.Remove(lieferung);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool LieferungExists(int id)
         {
-          return (_context.Lieferungen?.Any(e => e.Id == id)).GetValueOrDefault();
+            return (_context.Lieferungen?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }

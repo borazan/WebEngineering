@@ -106,7 +106,6 @@ public class IdentityContext : IdentityDbContext<User>
         for (int i = -1; i >= -20; i--) // generate random product list
         {
             string productName = $"{materials[random.Next(materials.Count)]}{parts[random.Next(parts.Count)]}";
-
             Produkt produkt = new Produkt()
             {
                 Id = i,

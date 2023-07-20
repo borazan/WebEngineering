@@ -51,8 +51,8 @@ namespace WebEngineering.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "1b08697c-2966-4480-a747-99abecda42dc",
-                            ConcurrencyStamp = "3c907fdf-38e3-481e-9de8-240bdcbf3812",
+                            Id = "a1fa31e3-89db-408e-b7bd-cb90b6468a89",
+                            ConcurrencyStamp = "18ffc6a9-42fe-4812-91e9-278b7812aee0",
                             Name = "Manager",
                             NormalizedName = "MANAGER"
                         });
@@ -149,8 +149,8 @@ namespace WebEngineering.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "cabd83c0-5826-465d-b401-604cd1955566",
-                            RoleId = "1b08697c-2966-4480-a747-99abecda42dc"
+                            UserId = "06070146-1f25-49bc-8be7-b5a2b0b2abb4",
+                            RoleId = "a1fa31e3-89db-408e-b7bd-cb90b6468a89"
                         });
                 });
 
@@ -242,71 +242,71 @@ namespace WebEngineering.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "3547d056-87ed-4dc1-adeb-3b03b588f2b8",
+                            Id = "b7047b5c-1431-425b-b249-a7df9f6d4be0",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "77b9bfa8-b88f-459f-8eeb-26b19659c73d",
+                            ConcurrencyStamp = "cb663274-e84b-4f6b-85b6-dfa72a538cc8",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedUserName = "DEMO01@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEFXFkC9ofPn87AhIHpvomP7uAVnHzLHKKEl+0qBS0CUJ4Q//IG0lmDjnDJsXZ1Qewg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEBzjOnt7Jke3H7jHwCIgJt9YC0RtA0rFVxEYVhq3xSCFtR8lrN3EsUgbesRP0cUa1g==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "27dcc8f3-dc32-4131-b19a-5c5090c81022",
+                            SecurityStamp = "35cb832e-5db1-489c-93bd-07713834fc22",
                             TwoFactorEnabled = false,
                             UserName = "demo01@gmail.com"
                         },
                         new
                         {
-                            Id = "8d9095ea-cf62-442a-94a2-e237df42bbbf",
+                            Id = "611000d3-5b87-4967-ac7a-1c7704edc533",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "29c6a031-b0b3-4eb7-97c3-eef5b6805cd7",
+                            ConcurrencyStamp = "c2413b22-45e3-4029-9ebc-44cf5b16c1d8",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedUserName = "DEMO02@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAECEPkT/N1c0y9QIf4KXN8dOlf3ER+bSNyYtRQl5kA5WQ0m+YJ7pDWOcTrfwImWTa/Q==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEDY0N0WeQEeBGurr2E142lDMQOysD4Kbj2cnlYf1d+f/D2grchH6Zt2Oyw4f9FvF1Q==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "24f24c5b-450b-42a9-b7c0-a0c51da97215",
+                            SecurityStamp = "17513adb-1c07-422e-b54f-988ea731ab77",
                             TwoFactorEnabled = false,
                             UserName = "demo02@gmail.com"
                         },
                         new
                         {
-                            Id = "73939acc-e242-4942-9091-0249c06ee341",
+                            Id = "17419a28-5b7b-4ef7-b3c6-5dc087b04e60",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "589c6a0e-881d-43ec-9640-c5903c1a9c53",
+                            ConcurrencyStamp = "98baba0a-e6ba-4ef0-8f9e-9852c43a4e12",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedUserName = "DEMO03@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEO6IDF8iXfyvAZSI8fbxiyJh3cKfOPWkHx4PID/Dkpui3j8ADWme32zd84lDRX1Blg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEMMX++vM0214m0MTMYh/J2EaMRBXbV9h0wjwLBvzsfvzz2j3X5TfuH8jXDgXeEzyqw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "95456dbb-69f9-41c8-8f44-e0fb270f2a2e",
+                            SecurityStamp = "be886128-c8f6-40f2-bc66-c233552acfa9",
                             TwoFactorEnabled = false,
                             UserName = "demo03@gmail.com"
                         },
                         new
                         {
-                            Id = "82b1a4ca-6cf4-4b12-8b5d-5391ffc24f7a",
+                            Id = "cb42b4b8-c148-48ba-a88a-213224928ba5",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "e3567953-a7bd-4d3a-b832-63f1f7c908d8",
+                            ConcurrencyStamp = "f3b5396f-89a3-4d9c-8f4f-a754ac1c62a8",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedUserName = "DEMO04@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEBx9gLsjHQF+BJgko0acAQ3aY4Zj31h4J1JROOigSbQ4ZF04ObfjGwjxf8jCjgcuaQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEIthy7e3nRqj2aSCgtN3o1z1GwAh6/DRBFLK2WMWpKPLWF6kRJVvtEwvVLGRQ2OJag==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "0254c1f8-0097-4203-be27-9446a8c717a7",
+                            SecurityStamp = "630bfd0e-b9e3-47b3-8e3c-dfda8030302b",
                             TwoFactorEnabled = false,
                             UserName = "demo04@gmail.com"
                         },
                         new
                         {
-                            Id = "cabd83c0-5826-465d-b401-604cd1955566",
+                            Id = "06070146-1f25-49bc-8be7-b5a2b0b2abb4",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "0c004468-e518-4de2-bb56-b4ff4bcbf3b3",
+                            ConcurrencyStamp = "37858770-cc61-4ba3-8ad0-d6c3fe06689f",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedUserName = "ADMIN@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEM1/JhUui5DIxg4LW6KMRBa+xS9xUtvRh7Wssit/nukRD0Ck+91eeKcsmhZpcGggTg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEIQL99QUv+dVMq9zNSkdfpLUFv0hThSMOE+TjYvPrtOyV7HUZlsizaEa+NR4fsFVtg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "d8b2ee83-48aa-48ea-8bc7-55021eeb2a5a",
+                            SecurityStamp = "767fe920-9325-4942-a794-e6008df4ee86",
                             TwoFactorEnabled = false,
                             UserName = "admin@gmail.com"
                         });
@@ -326,7 +326,7 @@ namespace WebEngineering.Migrations
                     b.Property<int>("Menge")
                         .HasColumnType("int");
 
-                    b.Property<int>("ProduktId")
+                    b.Property<int?>("ProduktId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -339,562 +339,562 @@ namespace WebEngineering.Migrations
                         new
                         {
                             Id = -1,
-                            Date = new DateTime(2022, 9, 19, 6, 19, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 293,
-                            ProduktId = -16
+                            Date = new DateTime(2023, 7, 10, 3, 15, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 123,
+                            ProduktId = -3
                         },
                         new
                         {
                             Id = -2,
-                            Date = new DateTime(2022, 2, 27, 5, 35, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 132,
-                            ProduktId = -15
+                            Date = new DateTime(2023, 4, 25, 10, 39, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 209,
+                            ProduktId = -7
                         },
                         new
                         {
                             Id = -3,
-                            Date = new DateTime(2023, 11, 18, 7, 19, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 254,
+                            Date = new DateTime(2022, 10, 28, 2, 9, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 46,
                             ProduktId = -19
                         },
                         new
                         {
                             Id = -4,
-                            Date = new DateTime(2022, 10, 3, 4, 35, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 88,
-                            ProduktId = -8
+                            Date = new DateTime(2022, 12, 8, 5, 47, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 288,
+                            ProduktId = -4
                         },
                         new
                         {
                             Id = -5,
-                            Date = new DateTime(2022, 12, 26, 10, 51, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 211,
-                            ProduktId = -10
+                            Date = new DateTime(2023, 12, 3, 15, 9, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 171,
+                            ProduktId = -17
                         },
                         new
                         {
                             Id = -6,
-                            Date = new DateTime(2022, 9, 25, 2, 48, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 127,
-                            ProduktId = -17
+                            Date = new DateTime(2023, 10, 1, 21, 3, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 185,
+                            ProduktId = -19
                         },
                         new
                         {
                             Id = -7,
-                            Date = new DateTime(2023, 3, 2, 23, 2, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 163,
-                            ProduktId = -15
+                            Date = new DateTime(2023, 8, 25, 2, 54, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 295,
+                            ProduktId = -3
                         },
                         new
                         {
                             Id = -8,
-                            Date = new DateTime(2022, 1, 27, 22, 30, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 12,
-                            ProduktId = -4
-                        },
-                        new
-                        {
-                            Id = -9,
-                            Date = new DateTime(2023, 3, 4, 16, 49, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 170,
-                            ProduktId = -3
-                        },
-                        new
-                        {
-                            Id = -10,
-                            Date = new DateTime(2022, 6, 5, 5, 13, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 137,
-                            ProduktId = -9
-                        },
-                        new
-                        {
-                            Id = -11,
-                            Date = new DateTime(2022, 11, 13, 20, 52, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 263,
-                            ProduktId = -2
-                        },
-                        new
-                        {
-                            Id = -12,
-                            Date = new DateTime(2023, 5, 19, 1, 18, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 268,
-                            ProduktId = -9
-                        },
-                        new
-                        {
-                            Id = -13,
-                            Date = new DateTime(2023, 7, 19, 8, 56, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 184,
-                            ProduktId = -8
-                        },
-                        new
-                        {
-                            Id = -14,
-                            Date = new DateTime(2022, 5, 20, 0, 33, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 25,
-                            ProduktId = -19
-                        },
-                        new
-                        {
-                            Id = -15,
-                            Date = new DateTime(2023, 8, 13, 10, 22, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 58,
-                            ProduktId = -9
-                        },
-                        new
-                        {
-                            Id = -16,
-                            Date = new DateTime(2022, 1, 14, 9, 10, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 25,
-                            ProduktId = -16
-                        },
-                        new
-                        {
-                            Id = -17,
-                            Date = new DateTime(2023, 6, 20, 6, 39, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 18,
-                            ProduktId = -9
-                        },
-                        new
-                        {
-                            Id = -18,
-                            Date = new DateTime(2023, 4, 23, 12, 29, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 156,
-                            ProduktId = -10
-                        },
-                        new
-                        {
-                            Id = -19,
-                            Date = new DateTime(2022, 10, 1, 13, 29, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 184,
-                            ProduktId = -8
-                        },
-                        new
-                        {
-                            Id = -20,
-                            Date = new DateTime(2022, 8, 4, 12, 58, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 138,
-                            ProduktId = -17
-                        },
-                        new
-                        {
-                            Id = -21,
-                            Date = new DateTime(2023, 11, 4, 9, 3, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 295,
-                            ProduktId = -18
-                        },
-                        new
-                        {
-                            Id = -22,
-                            Date = new DateTime(2022, 5, 27, 10, 44, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 230,
-                            ProduktId = -3
-                        },
-                        new
-                        {
-                            Id = -23,
-                            Date = new DateTime(2022, 6, 22, 15, 23, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 177,
-                            ProduktId = -9
-                        },
-                        new
-                        {
-                            Id = -24,
-                            Date = new DateTime(2023, 12, 20, 23, 22, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 167,
-                            ProduktId = -3
-                        },
-                        new
-                        {
-                            Id = -25,
-                            Date = new DateTime(2023, 2, 20, 0, 26, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 126,
-                            ProduktId = -13
-                        },
-                        new
-                        {
-                            Id = -26,
-                            Date = new DateTime(2022, 12, 18, 4, 55, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 132,
-                            ProduktId = -16
-                        },
-                        new
-                        {
-                            Id = -27,
-                            Date = new DateTime(2023, 7, 11, 1, 41, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 268,
-                            ProduktId = -10
-                        },
-                        new
-                        {
-                            Id = -28,
-                            Date = new DateTime(2023, 12, 28, 2, 56, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 27,
-                            ProduktId = -5
-                        },
-                        new
-                        {
-                            Id = -29,
-                            Date = new DateTime(2022, 12, 8, 3, 26, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 216,
-                            ProduktId = -4
-                        },
-                        new
-                        {
-                            Id = -30,
-                            Date = new DateTime(2023, 8, 18, 4, 6, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 105,
-                            ProduktId = -13
-                        },
-                        new
-                        {
-                            Id = -31,
-                            Date = new DateTime(2022, 11, 15, 13, 32, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 194,
-                            ProduktId = -17
-                        },
-                        new
-                        {
-                            Id = -32,
-                            Date = new DateTime(2022, 10, 25, 1, 32, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 288,
-                            ProduktId = -14
-                        },
-                        new
-                        {
-                            Id = -33,
-                            Date = new DateTime(2022, 9, 18, 22, 22, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 154,
-                            ProduktId = -16
-                        },
-                        new
-                        {
-                            Id = -34,
-                            Date = new DateTime(2023, 1, 9, 2, 18, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 281,
-                            ProduktId = -5
-                        },
-                        new
-                        {
-                            Id = -35,
-                            Date = new DateTime(2023, 5, 5, 5, 57, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 260,
-                            ProduktId = -2
-                        },
-                        new
-                        {
-                            Id = -36,
-                            Date = new DateTime(2022, 3, 20, 1, 8, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 152,
-                            ProduktId = -17
-                        },
-                        new
-                        {
-                            Id = -37,
-                            Date = new DateTime(2023, 10, 30, 6, 42, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 207,
-                            ProduktId = -2
-                        },
-                        new
-                        {
-                            Id = -38,
-                            Date = new DateTime(2022, 11, 25, 3, 4, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 215,
-                            ProduktId = -5
-                        },
-                        new
-                        {
-                            Id = -39,
-                            Date = new DateTime(2022, 1, 11, 13, 33, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 65,
-                            ProduktId = -16
-                        },
-                        new
-                        {
-                            Id = -40,
-                            Date = new DateTime(2023, 10, 27, 18, 23, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 224,
-                            ProduktId = -2
-                        },
-                        new
-                        {
-                            Id = -41,
-                            Date = new DateTime(2022, 7, 21, 8, 45, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 140,
-                            ProduktId = -7
-                        },
-                        new
-                        {
-                            Id = -42,
-                            Date = new DateTime(2023, 2, 19, 21, 21, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 236,
-                            ProduktId = -11
-                        },
-                        new
-                        {
-                            Id = -43,
-                            Date = new DateTime(2023, 1, 9, 19, 56, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 30,
-                            ProduktId = -13
-                        },
-                        new
-                        {
-                            Id = -44,
-                            Date = new DateTime(2022, 3, 12, 5, 38, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 287,
-                            ProduktId = -7
-                        },
-                        new
-                        {
-                            Id = -45,
-                            Date = new DateTime(2022, 11, 23, 14, 25, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 298,
-                            ProduktId = -10
-                        },
-                        new
-                        {
-                            Id = -46,
-                            Date = new DateTime(2022, 2, 10, 15, 25, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 159,
-                            ProduktId = -9
-                        },
-                        new
-                        {
-                            Id = -47,
-                            Date = new DateTime(2022, 4, 21, 6, 51, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 195,
+                            Date = new DateTime(2022, 2, 8, 15, 49, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 119,
                             ProduktId = -20
                         },
                         new
                         {
-                            Id = -48,
-                            Date = new DateTime(2022, 5, 8, 17, 7, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 166,
-                            ProduktId = -16
-                        },
-                        new
-                        {
-                            Id = -49,
-                            Date = new DateTime(2022, 6, 4, 18, 12, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 93,
-                            ProduktId = -19
-                        },
-                        new
-                        {
-                            Id = -50,
-                            Date = new DateTime(2023, 10, 31, 3, 56, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 125,
-                            ProduktId = -19
-                        },
-                        new
-                        {
-                            Id = -51,
-                            Date = new DateTime(2022, 12, 24, 4, 56, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 156,
-                            ProduktId = -10
-                        },
-                        new
-                        {
-                            Id = -52,
-                            Date = new DateTime(2022, 6, 3, 17, 51, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 78,
-                            ProduktId = -15
-                        },
-                        new
-                        {
-                            Id = -53,
-                            Date = new DateTime(2022, 6, 10, 1, 50, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 237,
-                            ProduktId = -8
-                        },
-                        new
-                        {
-                            Id = -54,
-                            Date = new DateTime(2023, 5, 30, 11, 38, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 281,
-                            ProduktId = -8
-                        },
-                        new
-                        {
-                            Id = -55,
-                            Date = new DateTime(2023, 3, 30, 5, 49, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 42,
-                            ProduktId = -4
-                        },
-                        new
-                        {
-                            Id = -56,
-                            Date = new DateTime(2023, 5, 24, 14, 23, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 257,
-                            ProduktId = -15
-                        },
-                        new
-                        {
-                            Id = -57,
-                            Date = new DateTime(2022, 5, 29, 4, 53, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 110,
-                            ProduktId = -9
-                        },
-                        new
-                        {
-                            Id = -58,
-                            Date = new DateTime(2023, 12, 10, 10, 8, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 260,
-                            ProduktId = -17
-                        },
-                        new
-                        {
-                            Id = -59,
-                            Date = new DateTime(2022, 6, 2, 4, 49, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 74,
-                            ProduktId = -17
-                        },
-                        new
-                        {
-                            Id = -60,
-                            Date = new DateTime(2022, 8, 31, 4, 20, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 132,
-                            ProduktId = -17
-                        },
-                        new
-                        {
-                            Id = -61,
-                            Date = new DateTime(2023, 12, 27, 10, 34, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 193,
-                            ProduktId = -6
-                        },
-                        new
-                        {
-                            Id = -62,
-                            Date = new DateTime(2022, 10, 31, 3, 36, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 131,
+                            Id = -9,
+                            Date = new DateTime(2022, 3, 9, 8, 49, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 155,
                             ProduktId = -14
                         },
                         new
                         {
-                            Id = -63,
-                            Date = new DateTime(2023, 6, 8, 14, 50, 0, 0, DateTimeKind.Unspecified),
+                            Id = -10,
+                            Date = new DateTime(2022, 4, 2, 3, 53, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 85,
+                            ProduktId = -16
+                        },
+                        new
+                        {
+                            Id = -11,
+                            Date = new DateTime(2022, 2, 3, 8, 41, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 264,
+                            ProduktId = -7
+                        },
+                        new
+                        {
+                            Id = -12,
+                            Date = new DateTime(2023, 7, 20, 22, 38, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 197,
+                            ProduktId = -13
+                        },
+                        new
+                        {
+                            Id = -13,
+                            Date = new DateTime(2022, 6, 4, 10, 39, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 102,
+                            ProduktId = -18
+                        },
+                        new
+                        {
+                            Id = -14,
+                            Date = new DateTime(2023, 11, 16, 23, 29, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 293,
+                            ProduktId = -12
+                        },
+                        new
+                        {
+                            Id = -15,
+                            Date = new DateTime(2022, 11, 26, 6, 42, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 225,
+                            ProduktId = -8
+                        },
+                        new
+                        {
+                            Id = -16,
+                            Date = new DateTime(2023, 10, 25, 19, 33, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 210,
+                            ProduktId = -10
+                        },
+                        new
+                        {
+                            Id = -17,
+                            Date = new DateTime(2023, 8, 4, 18, 50, 0, 0, DateTimeKind.Unspecified),
                             Menge = 119,
                             ProduktId = -8
                         },
                         new
                         {
+                            Id = -18,
+                            Date = new DateTime(2023, 4, 9, 3, 51, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 250,
+                            ProduktId = -16
+                        },
+                        new
+                        {
+                            Id = -19,
+                            Date = new DateTime(2022, 4, 25, 15, 34, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 107,
+                            ProduktId = -14
+                        },
+                        new
+                        {
+                            Id = -20,
+                            Date = new DateTime(2023, 7, 12, 14, 55, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 158,
+                            ProduktId = -5
+                        },
+                        new
+                        {
+                            Id = -21,
+                            Date = new DateTime(2023, 11, 17, 15, 47, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 133,
+                            ProduktId = -14
+                        },
+                        new
+                        {
+                            Id = -22,
+                            Date = new DateTime(2023, 7, 19, 0, 54, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 101,
+                            ProduktId = -19
+                        },
+                        new
+                        {
+                            Id = -23,
+                            Date = new DateTime(2023, 6, 22, 2, 24, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 281,
+                            ProduktId = -14
+                        },
+                        new
+                        {
+                            Id = -24,
+                            Date = new DateTime(2023, 12, 14, 7, 32, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 42,
+                            ProduktId = -2
+                        },
+                        new
+                        {
+                            Id = -25,
+                            Date = new DateTime(2022, 8, 19, 5, 14, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 117,
+                            ProduktId = -18
+                        },
+                        new
+                        {
+                            Id = -26,
+                            Date = new DateTime(2022, 5, 12, 1, 40, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 163,
+                            ProduktId = -11
+                        },
+                        new
+                        {
+                            Id = -27,
+                            Date = new DateTime(2023, 11, 19, 16, 18, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 214,
+                            ProduktId = -4
+                        },
+                        new
+                        {
+                            Id = -28,
+                            Date = new DateTime(2022, 1, 30, 17, 38, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 78,
+                            ProduktId = -6
+                        },
+                        new
+                        {
+                            Id = -29,
+                            Date = new DateTime(2023, 11, 21, 21, 59, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 174,
+                            ProduktId = -17
+                        },
+                        new
+                        {
+                            Id = -30,
+                            Date = new DateTime(2023, 11, 29, 23, 46, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 268,
+                            ProduktId = -18
+                        },
+                        new
+                        {
+                            Id = -31,
+                            Date = new DateTime(2023, 1, 11, 0, 29, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 129,
+                            ProduktId = -12
+                        },
+                        new
+                        {
+                            Id = -32,
+                            Date = new DateTime(2022, 4, 19, 15, 26, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 192,
+                            ProduktId = -5
+                        },
+                        new
+                        {
+                            Id = -33,
+                            Date = new DateTime(2022, 2, 24, 23, 55, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 273,
+                            ProduktId = -18
+                        },
+                        new
+                        {
+                            Id = -34,
+                            Date = new DateTime(2023, 8, 19, 23, 43, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 125,
+                            ProduktId = -18
+                        },
+                        new
+                        {
+                            Id = -35,
+                            Date = new DateTime(2023, 6, 25, 6, 52, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 149,
+                            ProduktId = -3
+                        },
+                        new
+                        {
+                            Id = -36,
+                            Date = new DateTime(2022, 10, 28, 21, 21, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 186,
+                            ProduktId = -12
+                        },
+                        new
+                        {
+                            Id = -37,
+                            Date = new DateTime(2023, 1, 21, 6, 56, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 229,
+                            ProduktId = -8
+                        },
+                        new
+                        {
+                            Id = -38,
+                            Date = new DateTime(2022, 12, 28, 13, 22, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 165,
+                            ProduktId = -14
+                        },
+                        new
+                        {
+                            Id = -39,
+                            Date = new DateTime(2022, 5, 23, 23, 29, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 176,
+                            ProduktId = -20
+                        },
+                        new
+                        {
+                            Id = -40,
+                            Date = new DateTime(2022, 9, 3, 9, 52, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 65,
+                            ProduktId = -19
+                        },
+                        new
+                        {
+                            Id = -41,
+                            Date = new DateTime(2022, 10, 7, 0, 7, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 293,
+                            ProduktId = -1
+                        },
+                        new
+                        {
+                            Id = -42,
+                            Date = new DateTime(2023, 6, 28, 23, 42, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 237,
+                            ProduktId = -1
+                        },
+                        new
+                        {
+                            Id = -43,
+                            Date = new DateTime(2023, 10, 26, 1, 45, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 128,
+                            ProduktId = -3
+                        },
+                        new
+                        {
+                            Id = -44,
+                            Date = new DateTime(2023, 3, 2, 21, 41, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 158,
+                            ProduktId = -14
+                        },
+                        new
+                        {
+                            Id = -45,
+                            Date = new DateTime(2022, 11, 30, 17, 22, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 274,
+                            ProduktId = -10
+                        },
+                        new
+                        {
+                            Id = -46,
+                            Date = new DateTime(2023, 8, 14, 23, 33, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 149,
+                            ProduktId = -14
+                        },
+                        new
+                        {
+                            Id = -47,
+                            Date = new DateTime(2023, 10, 2, 3, 26, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 36,
+                            ProduktId = -9
+                        },
+                        new
+                        {
+                            Id = -48,
+                            Date = new DateTime(2022, 2, 14, 16, 45, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 223,
+                            ProduktId = -20
+                        },
+                        new
+                        {
+                            Id = -49,
+                            Date = new DateTime(2022, 2, 11, 14, 45, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 104,
+                            ProduktId = -20
+                        },
+                        new
+                        {
+                            Id = -50,
+                            Date = new DateTime(2023, 9, 12, 4, 21, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 119,
+                            ProduktId = -6
+                        },
+                        new
+                        {
+                            Id = -51,
+                            Date = new DateTime(2022, 10, 4, 18, 47, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 284,
+                            ProduktId = -15
+                        },
+                        new
+                        {
+                            Id = -52,
+                            Date = new DateTime(2023, 5, 28, 10, 13, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 184,
+                            ProduktId = -6
+                        },
+                        new
+                        {
+                            Id = -53,
+                            Date = new DateTime(2023, 4, 7, 11, 55, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 70,
+                            ProduktId = -20
+                        },
+                        new
+                        {
+                            Id = -54,
+                            Date = new DateTime(2023, 6, 17, 15, 26, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 246,
+                            ProduktId = -7
+                        },
+                        new
+                        {
+                            Id = -55,
+                            Date = new DateTime(2023, 12, 21, 19, 9, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 156,
+                            ProduktId = -13
+                        },
+                        new
+                        {
+                            Id = -56,
+                            Date = new DateTime(2023, 12, 8, 9, 26, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 268,
+                            ProduktId = -16
+                        },
+                        new
+                        {
+                            Id = -57,
+                            Date = new DateTime(2022, 5, 13, 21, 2, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 172,
+                            ProduktId = -5
+                        },
+                        new
+                        {
+                            Id = -58,
+                            Date = new DateTime(2022, 3, 23, 21, 31, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 164,
+                            ProduktId = -1
+                        },
+                        new
+                        {
+                            Id = -59,
+                            Date = new DateTime(2023, 11, 18, 21, 14, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 162,
+                            ProduktId = -17
+                        },
+                        new
+                        {
+                            Id = -60,
+                            Date = new DateTime(2022, 3, 1, 23, 1, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 171,
+                            ProduktId = -6
+                        },
+                        new
+                        {
+                            Id = -61,
+                            Date = new DateTime(2023, 4, 29, 14, 43, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 142,
+                            ProduktId = -6
+                        },
+                        new
+                        {
+                            Id = -62,
+                            Date = new DateTime(2023, 7, 23, 11, 2, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 156,
+                            ProduktId = -10
+                        },
+                        new
+                        {
+                            Id = -63,
+                            Date = new DateTime(2022, 5, 29, 7, 38, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 28,
+                            ProduktId = -12
+                        },
+                        new
+                        {
                             Id = -64,
-                            Date = new DateTime(2022, 10, 14, 1, 46, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 238,
+                            Date = new DateTime(2022, 11, 18, 21, 34, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 36,
                             ProduktId = -17
                         },
                         new
                         {
                             Id = -65,
-                            Date = new DateTime(2023, 8, 10, 4, 29, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 162,
-                            ProduktId = -18
+                            Date = new DateTime(2023, 8, 15, 3, 57, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 52,
+                            ProduktId = -11
                         },
                         new
                         {
                             Id = -66,
-                            Date = new DateTime(2023, 2, 16, 5, 11, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 201,
-                            ProduktId = -14
+                            Date = new DateTime(2022, 7, 16, 12, 56, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 261,
+                            ProduktId = -4
                         },
                         new
                         {
                             Id = -67,
-                            Date = new DateTime(2022, 6, 24, 18, 1, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 52,
-                            ProduktId = -17
+                            Date = new DateTime(2022, 3, 20, 17, 21, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 5,
+                            ProduktId = -9
                         },
                         new
                         {
                             Id = -68,
-                            Date = new DateTime(2023, 8, 4, 23, 33, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 38,
-                            ProduktId = -18
+                            Date = new DateTime(2023, 6, 10, 10, 41, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 183,
+                            ProduktId = -2
                         },
                         new
                         {
                             Id = -69,
-                            Date = new DateTime(2023, 2, 22, 18, 19, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 155,
-                            ProduktId = -10
+                            Date = new DateTime(2022, 4, 12, 12, 36, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 150,
+                            ProduktId = -16
                         },
                         new
                         {
                             Id = -70,
-                            Date = new DateTime(2023, 7, 26, 11, 34, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 292,
-                            ProduktId = -15
-                        },
-                        new
-                        {
-                            Id = -71,
-                            Date = new DateTime(2022, 10, 2, 2, 31, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 157,
-                            ProduktId = -3
-                        },
-                        new
-                        {
-                            Id = -72,
-                            Date = new DateTime(2023, 3, 24, 1, 38, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 261,
-                            ProduktId = -3
-                        },
-                        new
-                        {
-                            Id = -73,
-                            Date = new DateTime(2022, 7, 23, 22, 54, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 162,
-                            ProduktId = -14
-                        },
-                        new
-                        {
-                            Id = -74,
-                            Date = new DateTime(2022, 12, 12, 20, 0, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 3,
-                            ProduktId = -8
-                        },
-                        new
-                        {
-                            Id = -75,
-                            Date = new DateTime(2023, 11, 7, 3, 4, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 44,
+                            Date = new DateTime(2022, 8, 30, 2, 47, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 98,
                             ProduktId = -7
                         },
                         new
                         {
+                            Id = -71,
+                            Date = new DateTime(2022, 3, 5, 1, 49, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 146,
+                            ProduktId = -11
+                        },
+                        new
+                        {
+                            Id = -72,
+                            Date = new DateTime(2022, 11, 10, 14, 4, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 5,
+                            ProduktId = -1
+                        },
+                        new
+                        {
+                            Id = -73,
+                            Date = new DateTime(2023, 4, 24, 1, 3, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 227,
+                            ProduktId = -13
+                        },
+                        new
+                        {
+                            Id = -74,
+                            Date = new DateTime(2022, 3, 22, 18, 41, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 267,
+                            ProduktId = -12
+                        },
+                        new
+                        {
+                            Id = -75,
+                            Date = new DateTime(2022, 5, 22, 23, 33, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 208,
+                            ProduktId = -2
+                        },
+                        new
+                        {
                             Id = -76,
-                            Date = new DateTime(2023, 2, 9, 4, 40, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 179,
+                            Date = new DateTime(2023, 4, 9, 5, 9, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 174,
                             ProduktId = -2
                         },
                         new
                         {
                             Id = -77,
-                            Date = new DateTime(2023, 6, 22, 14, 29, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 54,
-                            ProduktId = -9
+                            Date = new DateTime(2023, 11, 19, 19, 25, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 283,
+                            ProduktId = -3
                         },
                         new
                         {
                             Id = -78,
-                            Date = new DateTime(2022, 9, 10, 19, 2, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 145,
-                            ProduktId = -2
+                            Date = new DateTime(2022, 5, 29, 1, 40, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 253,
+                            ProduktId = -15
                         },
                         new
                         {
                             Id = -79,
-                            Date = new DateTime(2022, 4, 15, 4, 0, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 250,
-                            ProduktId = -11
+                            Date = new DateTime(2022, 5, 15, 15, 36, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 287,
+                            ProduktId = -7
                         },
                         new
                         {
                             Id = -80,
-                            Date = new DateTime(2023, 7, 4, 15, 59, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 168,
-                            ProduktId = -1
+                            Date = new DateTime(2022, 7, 17, 4, 14, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 243,
+                            ProduktId = -4
                         });
                 });
 
@@ -912,7 +912,7 @@ namespace WebEngineering.Migrations
                     b.Property<int>("Menge")
                         .HasColumnType("int");
 
-                    b.Property<int>("ProduktId")
+                    b.Property<int?>("ProduktId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -925,142 +925,142 @@ namespace WebEngineering.Migrations
                         new
                         {
                             Id = -1,
-                            Date = new DateTime(2023, 12, 23, 11, 43, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 4504,
-                            ProduktId = -17
+                            Date = new DateTime(2023, 12, 2, 14, 59, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 3932,
+                            ProduktId = -8
                         },
                         new
                         {
                             Id = -2,
-                            Date = new DateTime(2023, 1, 8, 7, 37, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 1249,
-                            ProduktId = -20
+                            Date = new DateTime(2022, 8, 28, 14, 8, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 4533,
+                            ProduktId = -12
                         },
                         new
                         {
                             Id = -3,
-                            Date = new DateTime(2023, 5, 19, 13, 22, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 2461,
+                            Date = new DateTime(2022, 10, 18, 18, 23, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 3494,
                             ProduktId = -16
                         },
                         new
                         {
                             Id = -4,
-                            Date = new DateTime(2022, 12, 25, 20, 14, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 860,
-                            ProduktId = -11
+                            Date = new DateTime(2022, 6, 20, 8, 40, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 4682,
+                            ProduktId = -19
                         },
                         new
                         {
                             Id = -5,
-                            Date = new DateTime(2023, 7, 29, 4, 34, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 3265,
-                            ProduktId = -11
+                            Date = new DateTime(2022, 4, 19, 19, 51, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 942,
+                            ProduktId = -17
                         },
                         new
                         {
                             Id = -6,
-                            Date = new DateTime(2022, 11, 17, 3, 44, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 1286,
-                            ProduktId = -4
+                            Date = new DateTime(2022, 4, 16, 23, 26, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 4787,
+                            ProduktId = -11
                         },
                         new
                         {
                             Id = -7,
-                            Date = new DateTime(2022, 12, 1, 9, 6, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 4836,
-                            ProduktId = -8
+                            Date = new DateTime(2022, 7, 4, 14, 26, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 501,
+                            ProduktId = -6
                         },
                         new
                         {
                             Id = -8,
-                            Date = new DateTime(2022, 7, 18, 10, 2, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 4036,
-                            ProduktId = -15
+                            Date = new DateTime(2022, 12, 28, 9, 7, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 922,
+                            ProduktId = -12
                         },
                         new
                         {
                             Id = -9,
-                            Date = new DateTime(2023, 2, 13, 21, 13, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 1341,
-                            ProduktId = -6
+                            Date = new DateTime(2022, 10, 19, 5, 8, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 2434,
+                            ProduktId = -9
                         },
                         new
                         {
                             Id = -10,
-                            Date = new DateTime(2023, 3, 2, 8, 50, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 2800,
-                            ProduktId = -16
-                        },
-                        new
-                        {
-                            Id = -11,
-                            Date = new DateTime(2023, 2, 8, 8, 52, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 4231,
-                            ProduktId = -8
-                        },
-                        new
-                        {
-                            Id = -12,
-                            Date = new DateTime(2023, 6, 21, 23, 10, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 2587,
-                            ProduktId = -19
-                        },
-                        new
-                        {
-                            Id = -13,
-                            Date = new DateTime(2022, 1, 6, 12, 22, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 992,
-                            ProduktId = -14
-                        },
-                        new
-                        {
-                            Id = -14,
-                            Date = new DateTime(2022, 8, 18, 13, 15, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 3939,
-                            ProduktId = -18
-                        },
-                        new
-                        {
-                            Id = -15,
-                            Date = new DateTime(2023, 5, 15, 9, 9, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 1604,
+                            Date = new DateTime(2022, 1, 19, 1, 54, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 2188,
                             ProduktId = -3
                         },
                         new
                         {
-                            Id = -16,
-                            Date = new DateTime(2022, 5, 7, 15, 15, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 854,
-                            ProduktId = -6
+                            Id = -11,
+                            Date = new DateTime(2023, 7, 29, 9, 58, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 4202,
+                            ProduktId = -1
                         },
                         new
                         {
-                            Id = -17,
-                            Date = new DateTime(2022, 8, 7, 17, 53, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 2554,
+                            Id = -12,
+                            Date = new DateTime(2022, 4, 26, 0, 11, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 2507,
+                            ProduktId = -11
+                        },
+                        new
+                        {
+                            Id = -13,
+                            Date = new DateTime(2023, 9, 24, 21, 25, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 3494,
+                            ProduktId = -11
+                        },
+                        new
+                        {
+                            Id = -14,
+                            Date = new DateTime(2022, 11, 23, 23, 58, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 4483,
                             ProduktId = -14
                         },
                         new
                         {
+                            Id = -15,
+                            Date = new DateTime(2022, 3, 22, 13, 17, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 3678,
+                            ProduktId = -5
+                        },
+                        new
+                        {
+                            Id = -16,
+                            Date = new DateTime(2022, 5, 6, 23, 50, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 643,
+                            ProduktId = -16
+                        },
+                        new
+                        {
+                            Id = -17,
+                            Date = new DateTime(2022, 9, 30, 15, 29, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 1497,
+                            ProduktId = -11
+                        },
+                        new
+                        {
                             Id = -18,
-                            Date = new DateTime(2022, 9, 1, 4, 6, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 2475,
-                            ProduktId = -8
+                            Date = new DateTime(2022, 4, 29, 22, 19, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 3790,
+                            ProduktId = -1
                         },
                         new
                         {
                             Id = -19,
-                            Date = new DateTime(2023, 3, 5, 14, 42, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 4681,
-                            ProduktId = -19
+                            Date = new DateTime(2022, 3, 11, 14, 23, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 4923,
+                            ProduktId = -11
                         },
                         new
                         {
                             Id = -20,
-                            Date = new DateTime(2023, 7, 18, 22, 24, 0, 0, DateTimeKind.Unspecified),
-                            Menge = 2060,
-                            ProduktId = -20
+                            Date = new DateTime(2023, 2, 9, 12, 39, 0, 0, DateTimeKind.Unspecified),
+                            Menge = 4276,
+                            ProduktId = -4
                         });
                 });
 
@@ -1073,7 +1073,6 @@ namespace WebEngineering.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -1084,102 +1083,102 @@ namespace WebEngineering.Migrations
                         new
                         {
                             Id = -1,
-                            Name = "Textildichtungen"
+                            Name = "Titanfilter"
                         },
                         new
                         {
                             Id = -2,
-                            Name = "Stahlventile"
+                            Name = "Glasgehäuse"
                         },
                         new
                         {
                             Id = -3,
-                            Name = "Keramikfedern"
+                            Name = "Acrylschalter"
                         },
                         new
                         {
                             Id = -4,
-                            Name = "Metallkabel"
+                            Name = "Textilfedern"
                         },
                         new
                         {
                             Id = -5,
-                            Name = "Kupferfilter"
-                        },
-                        new
-                        {
-                            Id = -6,
-                            Name = "Keramikzahnräder"
-                        },
-                        new
-                        {
-                            Id = -7,
-                            Name = "Bronzedichtungen"
-                        },
-                        new
-                        {
-                            Id = -8,
-                            Name = "Goldmuttern"
-                        },
-                        new
-                        {
-                            Id = -9,
-                            Name = "Aluminiumfilter"
-                        },
-                        new
-                        {
-                            Id = -10,
-                            Name = "Bronzeriemen"
-                        },
-                        new
-                        {
-                            Id = -11,
                             Name = "Titangehäuse"
                         },
                         new
                         {
+                            Id = -6,
+                            Name = "Goldrohre"
+                        },
+                        new
+                        {
+                            Id = -7,
+                            Name = "Keramikunterlegscheiben"
+                        },
+                        new
+                        {
+                            Id = -8,
+                            Name = "Glasunterlegscheiben"
+                        },
+                        new
+                        {
+                            Id = -9,
+                            Name = "Silberschalter"
+                        },
+                        new
+                        {
+                            Id = -10,
+                            Name = "Keramikschrauben"
+                        },
+                        new
+                        {
+                            Id = -11,
+                            Name = "Textilmuttern"
+                        },
+                        new
+                        {
                             Id = -12,
-                            Name = "Goldplatten"
+                            Name = "Kunststoffriemen"
                         },
                         new
                         {
                             Id = -13,
-                            Name = "Plexiglasventile"
+                            Name = "Gummischrauben"
                         },
                         new
                         {
                             Id = -14,
-                            Name = "Aluminiumfilter"
+                            Name = "Glasunterlegscheiben"
                         },
                         new
                         {
                             Id = -15,
-                            Name = "Titanriemen"
+                            Name = "Textilriemen"
                         },
                         new
                         {
                             Id = -16,
-                            Name = "Plexiglasfedern"
+                            Name = "Silberkabel"
                         },
                         new
                         {
                             Id = -17,
-                            Name = "Gummifilter"
+                            Name = "Acrylzahnräder"
                         },
                         new
                         {
                             Id = -18,
-                            Name = "Gummifilter"
+                            Name = "Keramikrohre"
                         },
                         new
                         {
                             Id = -19,
-                            Name = "Steinventile"
+                            Name = "Textilkabel"
                         },
                         new
                         {
                             Id = -20,
-                            Name = "Golddichtungen"
+                            Name = "Textilgehäuse"
                         });
                 });
 
@@ -1265,10 +1264,8 @@ namespace WebEngineering.Migrations
             modelBuilder.Entity("WebEngineering.Models.Bestellung", b =>
                 {
                     b.HasOne("WebEngineering.Models.Produkt", "Produkt")
-                        .WithMany()
-                        .HasForeignKey("ProduktId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .WithMany("Bestellungen")
+                        .HasForeignKey("ProduktId");
 
                     b.Navigation("Produkt");
                 });
@@ -1276,10 +1273,8 @@ namespace WebEngineering.Migrations
             modelBuilder.Entity("WebEngineering.Models.Lieferung", b =>
                 {
                     b.HasOne("WebEngineering.Models.Produkt", "Produkt")
-                        .WithMany()
-                        .HasForeignKey("ProduktId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .WithMany("Lieferungen")
+                        .HasForeignKey("ProduktId");
 
                     b.Navigation("Produkt");
                 });
@@ -1309,6 +1304,13 @@ namespace WebEngineering.Migrations
                     b.Navigation("Lieferung");
 
                     b.Navigation("Produkt");
+                });
+
+            modelBuilder.Entity("WebEngineering.Models.Produkt", b =>
+                {
+                    b.Navigation("Bestellungen");
+
+                    b.Navigation("Lieferungen");
                 });
 #pragma warning restore 612, 618
         }

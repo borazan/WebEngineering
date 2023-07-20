@@ -67,7 +67,7 @@ namespace WebEngineering.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ProduktId"] = new SelectList(_context.Produkte, "Id", "Id", bestellung.ProduktId);
+            ViewData["ProduktId"] = new SelectList(_context.Produkte, "Id", "Name", bestellung.ProduktId);
             return View(bestellung);
         }
 

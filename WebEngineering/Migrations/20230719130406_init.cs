@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace WebEngineering.Migrations
 {
     /// <inheritdoc />
-    public partial class _01 : Migration
+    public partial class init : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -58,7 +58,7 @@ namespace WebEngineering.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -177,7 +177,7 @@ namespace WebEngineering.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    ProduktId = table.Column<int>(type: "int", nullable: false),
+                    ProduktId = table.Column<int>(type: "int", nullable: true),
                     Date = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Menge = table.Column<int>(type: "int", nullable: false)
                 },
@@ -188,8 +188,7 @@ namespace WebEngineering.Migrations
                         name: "FK_Bestellungen_Produkte_ProduktId",
                         column: x => x.ProduktId,
                         principalTable: "Produkte",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -198,7 +197,7 @@ namespace WebEngineering.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    ProduktId = table.Column<int>(type: "int", nullable: false),
+                    ProduktId = table.Column<int>(type: "int", nullable: true),
                     Date = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Menge = table.Column<int>(type: "int", nullable: false)
                 },
@@ -209,8 +208,7 @@ namespace WebEngineering.Migrations
                         name: "FK_Lieferungen_Produkte_ProduktId",
                         column: x => x.ProduktId,
                         principalTable: "Produkte",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -231,36 +229,36 @@ namespace WebEngineering.Migrations
                         column: x => x.BestellungId,
                         principalTable: "Bestellungen",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.NoAction);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_ViewModel_Lieferungen_LieferungId",
                         column: x => x.LieferungId,
                         principalTable: "Lieferungen",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.NoAction);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_ViewModel_Produkte_ProduktId",
                         column: x => x.ProduktId,
                         principalTable: "Produkte",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.NoAction);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "50da61af-5496-4e5f-bba0-510c14c6e5f7", "6c560b26-a37b-4b26-9f2b-a1e4f7bff109", "Manager", "MANAGER" });
+                values: new object[] { "a1fa31e3-89db-408e-b7bd-cb90b6468a89", "18ffc6a9-42fe-4812-91e9-278b7812aee0", "Manager", "MANAGER" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
-                    { "0921b8ab-d5c6-4619-81e0-b43f92072264", 0, "c7bfd898-ddba-4b5a-88e1-231dcd414241", null, false, false, null, null, "ADMIN", "AQAAAAEAACcQAAAAEIrEIOaV6iCheSbpS245QYC9nQThQF95XfBwZJadLW45fXWFKd50ln2fYTG+iHe4YA==", null, false, "c7b664b5-f5d3-4980-afaf-4fce43132783", false, "admin" },
-                    { "8112e46a-4766-442e-9fc5-4376440acbe8", 0, "7071c698-c1c8-46b0-82e5-c69db353a337", null, false, false, null, null, "DEMO01", "AQAAAAEAACcQAAAAECY9sCe7ncZEhU0/D31WNcE5VexdcQ40Su+eybUjmsAbXcj9SFeFeeu/X73nKcuoxw==", null, false, "223e7de1-e1c2-4883-aa20-ce1b4a5a1318", false, "demo01" },
-                    { "8fc8cf74-57e4-469b-9b64-ecf9640f7e25", 0, "bfcdc538-13fa-4a26-a25b-930c76f0c5a6", null, false, false, null, null, "DEMO04", "AQAAAAEAACcQAAAAEH+hhSh7PdFcgDKB/71hGRiOFO0vdP0/FeEHj8+fvhpcI1cqujkGYPFeV/991MCgaQ==", null, false, "cd65ad0c-b8a8-4efa-b9a4-581fb4c9be6a", false, "demo04" },
-                    { "e63e539a-a8ba-4d8c-82b3-7b1aa86fe992", 0, "5e04f3be-b906-44be-add7-0e64e7ed7791", null, false, false, null, null, "DEMO03", "AQAAAAEAACcQAAAAEBZNv8bHuhhAOX+x2qwu6M/ZY6K31haHdXiMlszxTKl4gb8z+jaVgpfDukNRPn1bug==", null, false, "a34a6538-2ab7-4c2c-b753-e4a85306b89a", false, "demo03" },
-                    { "ed8a1276-4583-4260-afbd-d974a42de397", 0, "bcb03b0b-6e4e-4155-af25-37947247012b", null, false, false, null, null, "DEMO02", "AQAAAAEAACcQAAAAEN+MphtsmQtaXo1/pEWwpodVHm0HBF+M7bo1Ie8sS3tNtXb8bpMT5LNcjioHP3cUiA==", null, false, "54aabf48-9267-4433-ada1-5572d782560a", false, "demo02" }
+                    { "06070146-1f25-49bc-8be7-b5a2b0b2abb4", 0, "37858770-cc61-4ba3-8ad0-d6c3fe06689f", null, false, false, null, null, "ADMIN@GMAIL.COM", "AQAAAAEAACcQAAAAEIQL99QUv+dVMq9zNSkdfpLUFv0hThSMOE+TjYvPrtOyV7HUZlsizaEa+NR4fsFVtg==", null, false, "767fe920-9325-4942-a794-e6008df4ee86", false, "admin@gmail.com" },
+                    { "17419a28-5b7b-4ef7-b3c6-5dc087b04e60", 0, "98baba0a-e6ba-4ef0-8f9e-9852c43a4e12", null, false, false, null, null, "DEMO03@GMAIL.COM", "AQAAAAEAACcQAAAAEMMX++vM0214m0MTMYh/J2EaMRBXbV9h0wjwLBvzsfvzz2j3X5TfuH8jXDgXeEzyqw==", null, false, "be886128-c8f6-40f2-bc66-c233552acfa9", false, "demo03@gmail.com" },
+                    { "611000d3-5b87-4967-ac7a-1c7704edc533", 0, "c2413b22-45e3-4029-9ebc-44cf5b16c1d8", null, false, false, null, null, "DEMO02@GMAIL.COM", "AQAAAAEAACcQAAAAEDY0N0WeQEeBGurr2E142lDMQOysD4Kbj2cnlYf1d+f/D2grchH6Zt2Oyw4f9FvF1Q==", null, false, "17513adb-1c07-422e-b54f-988ea731ab77", false, "demo02@gmail.com" },
+                    { "b7047b5c-1431-425b-b249-a7df9f6d4be0", 0, "cb663274-e84b-4f6b-85b6-dfa72a538cc8", null, false, false, null, null, "DEMO01@GMAIL.COM", "AQAAAAEAACcQAAAAEBzjOnt7Jke3H7jHwCIgJt9YC0RtA0rFVxEYVhq3xSCFtR8lrN3EsUgbesRP0cUa1g==", null, false, "35cb832e-5db1-489c-93bd-07713834fc22", false, "demo01@gmail.com" },
+                    { "cb42b4b8-c148-48ba-a88a-213224928ba5", 0, "f3b5396f-89a3-4d9c-8f4f-a754ac1c62a8", null, false, false, null, null, "DEMO04@GMAIL.COM", "AQAAAAEAACcQAAAAEIthy7e3nRqj2aSCgtN3o1z1GwAh6/DRBFLK2WMWpKPLWF6kRJVvtEwvVLGRQ2OJag==", null, false, "630bfd0e-b9e3-47b3-8e3c-dfda8030302b", false, "demo04@gmail.com" }
                 });
 
             migrationBuilder.InsertData(
@@ -268,118 +266,118 @@ namespace WebEngineering.Migrations
                 columns: new[] { "Id", "Name" },
                 values: new object[,]
                 {
-                    { -20, "Metallschalter" },
-                    { -19, "Gummikabel" },
-                    { -18, "Silberunterlegscheiben" },
-                    { -17, "Silberzahnräder" },
-                    { -16, "Plexiglasmuttern" },
-                    { -15, "Aluminiummuttern" },
-                    { -14, "Bronzebolzen" },
-                    { -13, "Kunststoffdichtungen" },
-                    { -12, "Kupferdichtungen" },
-                    { -11, "Plexiglasunterlegscheiben" },
-                    { -10, "Papiergehäuse" },
-                    { -9, "Betonriemen" },
-                    { -8, "Steindichtungen" },
-                    { -7, "Keramikventile" },
-                    { -6, "Gummimuttern" },
-                    { -5, "Stahlkabel" },
-                    { -4, "Aluminiumgehäuse" },
-                    { -3, "Aluminiumriemen" },
-                    { -2, "Aluminiumsensoren" },
-                    { -1, "Textilfilter" }
+                    { -20, "Textilgehäuse" },
+                    { -19, "Textilkabel" },
+                    { -18, "Keramikrohre" },
+                    { -17, "Acrylzahnräder" },
+                    { -16, "Silberkabel" },
+                    { -15, "Textilriemen" },
+                    { -14, "Glasunterlegscheiben" },
+                    { -13, "Gummischrauben" },
+                    { -12, "Kunststoffriemen" },
+                    { -11, "Textilmuttern" },
+                    { -10, "Keramikschrauben" },
+                    { -9, "Silberschalter" },
+                    { -8, "Glasunterlegscheiben" },
+                    { -7, "Keramikunterlegscheiben" },
+                    { -6, "Goldrohre" },
+                    { -5, "Titangehäuse" },
+                    { -4, "Textilfedern" },
+                    { -3, "Acrylschalter" },
+                    { -2, "Glasgehäuse" },
+                    { -1, "Titanfilter" }
                 });
 
             migrationBuilder.InsertData(
                 table: "AspNetUserRoles",
                 columns: new[] { "RoleId", "UserId" },
-                values: new object[] { "50da61af-5496-4e5f-bba0-510c14c6e5f7", "0921b8ab-d5c6-4619-81e0-b43f92072264" });
+                values: new object[] { "a1fa31e3-89db-408e-b7bd-cb90b6468a89", "06070146-1f25-49bc-8be7-b5a2b0b2abb4" });
 
             migrationBuilder.InsertData(
                 table: "Bestellungen",
                 columns: new[] { "Id", "Date", "Menge", "ProduktId" },
                 values: new object[,]
                 {
-                    { -80, new DateTime(2023, 2, 14, 4, 28, 0, 0, DateTimeKind.Unspecified), 186, -3 },
-                    { -79, new DateTime(2023, 7, 19, 9, 34, 0, 0, DateTimeKind.Unspecified), 3, -4 },
-                    { -78, new DateTime(2023, 8, 13, 5, 55, 0, 0, DateTimeKind.Unspecified), 43, -10 },
-                    { -77, new DateTime(2023, 7, 28, 0, 20, 0, 0, DateTimeKind.Unspecified), 8, -18 },
-                    { -76, new DateTime(2023, 3, 16, 13, 5, 0, 0, DateTimeKind.Unspecified), 162, -12 },
-                    { -75, new DateTime(2023, 3, 18, 19, 15, 0, 0, DateTimeKind.Unspecified), 146, -14 },
-                    { -74, new DateTime(2023, 1, 14, 2, 17, 0, 0, DateTimeKind.Unspecified), 258, -12 },
-                    { -73, new DateTime(2022, 7, 9, 14, 26, 0, 0, DateTimeKind.Unspecified), 131, -18 },
-                    { -72, new DateTime(2022, 12, 19, 21, 39, 0, 0, DateTimeKind.Unspecified), 150, -3 },
-                    { -71, new DateTime(2022, 6, 3, 17, 49, 0, 0, DateTimeKind.Unspecified), 136, -15 },
-                    { -70, new DateTime(2022, 11, 21, 14, 36, 0, 0, DateTimeKind.Unspecified), 125, -17 },
-                    { -69, new DateTime(2022, 8, 12, 19, 51, 0, 0, DateTimeKind.Unspecified), 222, -20 },
-                    { -68, new DateTime(2023, 2, 24, 19, 25, 0, 0, DateTimeKind.Unspecified), 95, -18 },
-                    { -67, new DateTime(2023, 2, 13, 20, 29, 0, 0, DateTimeKind.Unspecified), 5, -13 },
-                    { -66, new DateTime(2023, 2, 15, 5, 56, 0, 0, DateTimeKind.Unspecified), 68, -12 },
-                    { -65, new DateTime(2022, 8, 3, 7, 27, 0, 0, DateTimeKind.Unspecified), 101, -8 },
-                    { -64, new DateTime(2023, 2, 5, 7, 39, 0, 0, DateTimeKind.Unspecified), 69, -12 },
-                    { -63, new DateTime(2023, 3, 12, 9, 1, 0, 0, DateTimeKind.Unspecified), 258, -2 },
-                    { -62, new DateTime(2023, 5, 12, 8, 44, 0, 0, DateTimeKind.Unspecified), 260, -18 },
-                    { -61, new DateTime(2023, 6, 24, 8, 17, 0, 0, DateTimeKind.Unspecified), 1, -18 },
-                    { -60, new DateTime(2023, 11, 21, 12, 12, 0, 0, DateTimeKind.Unspecified), 61, -8 },
-                    { -59, new DateTime(2023, 10, 13, 5, 6, 0, 0, DateTimeKind.Unspecified), 192, -7 },
-                    { -58, new DateTime(2023, 12, 3, 7, 43, 0, 0, DateTimeKind.Unspecified), 202, -19 },
-                    { -57, new DateTime(2022, 11, 27, 11, 20, 0, 0, DateTimeKind.Unspecified), 271, -7 },
-                    { -56, new DateTime(2022, 5, 1, 11, 18, 0, 0, DateTimeKind.Unspecified), 216, -14 },
-                    { -55, new DateTime(2023, 9, 21, 8, 28, 0, 0, DateTimeKind.Unspecified), 123, -2 },
-                    { -54, new DateTime(2023, 12, 21, 12, 45, 0, 0, DateTimeKind.Unspecified), 177, -5 },
-                    { -53, new DateTime(2022, 9, 15, 7, 39, 0, 0, DateTimeKind.Unspecified), 119, -18 },
-                    { -52, new DateTime(2023, 8, 3, 17, 51, 0, 0, DateTimeKind.Unspecified), 131, -11 },
-                    { -51, new DateTime(2023, 9, 9, 23, 8, 0, 0, DateTimeKind.Unspecified), 165, -12 },
-                    { -50, new DateTime(2022, 7, 5, 11, 57, 0, 0, DateTimeKind.Unspecified), 37, -20 },
-                    { -49, new DateTime(2023, 7, 3, 2, 13, 0, 0, DateTimeKind.Unspecified), 12, -17 },
-                    { -48, new DateTime(2022, 5, 21, 7, 29, 0, 0, DateTimeKind.Unspecified), 45, -2 },
-                    { -47, new DateTime(2022, 9, 8, 19, 14, 0, 0, DateTimeKind.Unspecified), 292, -12 },
-                    { -46, new DateTime(2023, 6, 4, 15, 39, 0, 0, DateTimeKind.Unspecified), 166, -2 },
-                    { -45, new DateTime(2022, 10, 23, 14, 36, 0, 0, DateTimeKind.Unspecified), 297, -1 },
-                    { -44, new DateTime(2022, 12, 2, 3, 14, 0, 0, DateTimeKind.Unspecified), 212, -3 },
-                    { -43, new DateTime(2023, 2, 3, 14, 9, 0, 0, DateTimeKind.Unspecified), 196, -17 },
-                    { -42, new DateTime(2022, 2, 28, 2, 10, 0, 0, DateTimeKind.Unspecified), 121, -15 },
-                    { -41, new DateTime(2023, 6, 18, 19, 24, 0, 0, DateTimeKind.Unspecified), 197, -18 },
-                    { -40, new DateTime(2023, 8, 2, 2, 22, 0, 0, DateTimeKind.Unspecified), 237, -15 },
-                    { -39, new DateTime(2022, 5, 5, 6, 57, 0, 0, DateTimeKind.Unspecified), 298, -10 },
-                    { -38, new DateTime(2023, 1, 10, 7, 42, 0, 0, DateTimeKind.Unspecified), 136, -10 },
-                    { -37, new DateTime(2023, 8, 8, 12, 37, 0, 0, DateTimeKind.Unspecified), 222, -9 },
-                    { -36, new DateTime(2023, 7, 3, 4, 53, 0, 0, DateTimeKind.Unspecified), 235, -13 },
-                    { -35, new DateTime(2022, 4, 3, 7, 26, 0, 0, DateTimeKind.Unspecified), 134, -17 },
-                    { -34, new DateTime(2022, 12, 1, 19, 34, 0, 0, DateTimeKind.Unspecified), 173, -7 },
-                    { -33, new DateTime(2023, 6, 20, 2, 7, 0, 0, DateTimeKind.Unspecified), 117, -10 },
-                    { -32, new DateTime(2022, 3, 10, 23, 30, 0, 0, DateTimeKind.Unspecified), 262, -11 },
-                    { -31, new DateTime(2022, 1, 14, 0, 0, 0, 0, DateTimeKind.Unspecified), 11, -4 },
-                    { -30, new DateTime(2022, 10, 16, 23, 30, 0, 0, DateTimeKind.Unspecified), 260, -19 },
-                    { -29, new DateTime(2022, 9, 30, 13, 33, 0, 0, DateTimeKind.Unspecified), 103, -4 },
-                    { -28, new DateTime(2022, 7, 15, 10, 8, 0, 0, DateTimeKind.Unspecified), 53, -2 },
-                    { -27, new DateTime(2023, 7, 4, 22, 19, 0, 0, DateTimeKind.Unspecified), 201, -8 },
-                    { -26, new DateTime(2022, 4, 17, 7, 2, 0, 0, DateTimeKind.Unspecified), 181, -8 },
-                    { -25, new DateTime(2023, 3, 8, 5, 41, 0, 0, DateTimeKind.Unspecified), 183, -13 },
-                    { -24, new DateTime(2023, 12, 16, 9, 47, 0, 0, DateTimeKind.Unspecified), 149, -14 },
-                    { -23, new DateTime(2022, 3, 22, 9, 41, 0, 0, DateTimeKind.Unspecified), 226, -16 },
-                    { -22, new DateTime(2023, 8, 8, 4, 47, 0, 0, DateTimeKind.Unspecified), 98, -19 },
-                    { -21, new DateTime(2023, 1, 30, 7, 35, 0, 0, DateTimeKind.Unspecified), 249, -15 },
-                    { -20, new DateTime(2023, 6, 5, 16, 51, 0, 0, DateTimeKind.Unspecified), 212, -17 },
-                    { -19, new DateTime(2022, 11, 20, 19, 20, 0, 0, DateTimeKind.Unspecified), 183, -17 },
-                    { -18, new DateTime(2023, 5, 5, 6, 48, 0, 0, DateTimeKind.Unspecified), 213, -17 },
-                    { -17, new DateTime(2022, 11, 11, 10, 13, 0, 0, DateTimeKind.Unspecified), 22, -5 },
-                    { -16, new DateTime(2022, 10, 19, 14, 7, 0, 0, DateTimeKind.Unspecified), 155, -12 },
-                    { -15, new DateTime(2022, 2, 3, 19, 38, 0, 0, DateTimeKind.Unspecified), 103, -15 },
-                    { -14, new DateTime(2023, 1, 23, 20, 40, 0, 0, DateTimeKind.Unspecified), 287, -12 },
-                    { -13, new DateTime(2022, 11, 17, 15, 18, 0, 0, DateTimeKind.Unspecified), 128, -12 },
-                    { -12, new DateTime(2023, 5, 18, 10, 55, 0, 0, DateTimeKind.Unspecified), 97, -19 },
-                    { -11, new DateTime(2022, 6, 25, 22, 17, 0, 0, DateTimeKind.Unspecified), 198, -6 },
-                    { -10, new DateTime(2022, 5, 10, 21, 12, 0, 0, DateTimeKind.Unspecified), 247, -9 },
-                    { -9, new DateTime(2023, 5, 10, 2, 47, 0, 0, DateTimeKind.Unspecified), 147, -12 },
-                    { -8, new DateTime(2023, 2, 28, 12, 22, 0, 0, DateTimeKind.Unspecified), 43, -5 },
-                    { -7, new DateTime(2023, 4, 16, 19, 56, 0, 0, DateTimeKind.Unspecified), 295, -14 },
-                    { -6, new DateTime(2023, 1, 18, 18, 19, 0, 0, DateTimeKind.Unspecified), 270, -19 },
-                    { -5, new DateTime(2023, 12, 26, 1, 0, 0, 0, DateTimeKind.Unspecified), 210, -19 },
-                    { -4, new DateTime(2022, 8, 11, 20, 19, 0, 0, DateTimeKind.Unspecified), 248, -18 },
-                    { -3, new DateTime(2023, 2, 21, 19, 11, 0, 0, DateTimeKind.Unspecified), 77, -19 },
-                    { -2, new DateTime(2023, 12, 14, 15, 48, 0, 0, DateTimeKind.Unspecified), 143, -14 },
-                    { -1, new DateTime(2023, 5, 22, 18, 3, 0, 0, DateTimeKind.Unspecified), 279, -18 }
+                    { -80, new DateTime(2022, 7, 17, 4, 14, 0, 0, DateTimeKind.Unspecified), 243, -4 },
+                    { -79, new DateTime(2022, 5, 15, 15, 36, 0, 0, DateTimeKind.Unspecified), 287, -7 },
+                    { -78, new DateTime(2022, 5, 29, 1, 40, 0, 0, DateTimeKind.Unspecified), 253, -15 },
+                    { -77, new DateTime(2023, 11, 19, 19, 25, 0, 0, DateTimeKind.Unspecified), 283, -3 },
+                    { -76, new DateTime(2023, 4, 9, 5, 9, 0, 0, DateTimeKind.Unspecified), 174, -2 },
+                    { -75, new DateTime(2022, 5, 22, 23, 33, 0, 0, DateTimeKind.Unspecified), 208, -2 },
+                    { -74, new DateTime(2022, 3, 22, 18, 41, 0, 0, DateTimeKind.Unspecified), 267, -12 },
+                    { -73, new DateTime(2023, 4, 24, 1, 3, 0, 0, DateTimeKind.Unspecified), 227, -13 },
+                    { -72, new DateTime(2022, 11, 10, 14, 4, 0, 0, DateTimeKind.Unspecified), 5, -1 },
+                    { -71, new DateTime(2022, 3, 5, 1, 49, 0, 0, DateTimeKind.Unspecified), 146, -11 },
+                    { -70, new DateTime(2022, 8, 30, 2, 47, 0, 0, DateTimeKind.Unspecified), 98, -7 },
+                    { -69, new DateTime(2022, 4, 12, 12, 36, 0, 0, DateTimeKind.Unspecified), 150, -16 },
+                    { -68, new DateTime(2023, 6, 10, 10, 41, 0, 0, DateTimeKind.Unspecified), 183, -2 },
+                    { -67, new DateTime(2022, 3, 20, 17, 21, 0, 0, DateTimeKind.Unspecified), 5, -9 },
+                    { -66, new DateTime(2022, 7, 16, 12, 56, 0, 0, DateTimeKind.Unspecified), 261, -4 },
+                    { -65, new DateTime(2023, 8, 15, 3, 57, 0, 0, DateTimeKind.Unspecified), 52, -11 },
+                    { -64, new DateTime(2022, 11, 18, 21, 34, 0, 0, DateTimeKind.Unspecified), 36, -17 },
+                    { -63, new DateTime(2022, 5, 29, 7, 38, 0, 0, DateTimeKind.Unspecified), 28, -12 },
+                    { -62, new DateTime(2023, 7, 23, 11, 2, 0, 0, DateTimeKind.Unspecified), 156, -10 },
+                    { -61, new DateTime(2023, 4, 29, 14, 43, 0, 0, DateTimeKind.Unspecified), 142, -6 },
+                    { -60, new DateTime(2022, 3, 1, 23, 1, 0, 0, DateTimeKind.Unspecified), 171, -6 },
+                    { -59, new DateTime(2023, 11, 18, 21, 14, 0, 0, DateTimeKind.Unspecified), 162, -17 },
+                    { -58, new DateTime(2022, 3, 23, 21, 31, 0, 0, DateTimeKind.Unspecified), 164, -1 },
+                    { -57, new DateTime(2022, 5, 13, 21, 2, 0, 0, DateTimeKind.Unspecified), 172, -5 },
+                    { -56, new DateTime(2023, 12, 8, 9, 26, 0, 0, DateTimeKind.Unspecified), 268, -16 },
+                    { -55, new DateTime(2023, 12, 21, 19, 9, 0, 0, DateTimeKind.Unspecified), 156, -13 },
+                    { -54, new DateTime(2023, 6, 17, 15, 26, 0, 0, DateTimeKind.Unspecified), 246, -7 },
+                    { -53, new DateTime(2023, 4, 7, 11, 55, 0, 0, DateTimeKind.Unspecified), 70, -20 },
+                    { -52, new DateTime(2023, 5, 28, 10, 13, 0, 0, DateTimeKind.Unspecified), 184, -6 },
+                    { -51, new DateTime(2022, 10, 4, 18, 47, 0, 0, DateTimeKind.Unspecified), 284, -15 },
+                    { -50, new DateTime(2023, 9, 12, 4, 21, 0, 0, DateTimeKind.Unspecified), 119, -6 },
+                    { -49, new DateTime(2022, 2, 11, 14, 45, 0, 0, DateTimeKind.Unspecified), 104, -20 },
+                    { -48, new DateTime(2022, 2, 14, 16, 45, 0, 0, DateTimeKind.Unspecified), 223, -20 },
+                    { -47, new DateTime(2023, 10, 2, 3, 26, 0, 0, DateTimeKind.Unspecified), 36, -9 },
+                    { -46, new DateTime(2023, 8, 14, 23, 33, 0, 0, DateTimeKind.Unspecified), 149, -14 },
+                    { -45, new DateTime(2022, 11, 30, 17, 22, 0, 0, DateTimeKind.Unspecified), 274, -10 },
+                    { -44, new DateTime(2023, 3, 2, 21, 41, 0, 0, DateTimeKind.Unspecified), 158, -14 },
+                    { -43, new DateTime(2023, 10, 26, 1, 45, 0, 0, DateTimeKind.Unspecified), 128, -3 },
+                    { -42, new DateTime(2023, 6, 28, 23, 42, 0, 0, DateTimeKind.Unspecified), 237, -1 },
+                    { -41, new DateTime(2022, 10, 7, 0, 7, 0, 0, DateTimeKind.Unspecified), 293, -1 },
+                    { -40, new DateTime(2022, 9, 3, 9, 52, 0, 0, DateTimeKind.Unspecified), 65, -19 },
+                    { -39, new DateTime(2022, 5, 23, 23, 29, 0, 0, DateTimeKind.Unspecified), 176, -20 },
+                    { -38, new DateTime(2022, 12, 28, 13, 22, 0, 0, DateTimeKind.Unspecified), 165, -14 },
+                    { -37, new DateTime(2023, 1, 21, 6, 56, 0, 0, DateTimeKind.Unspecified), 229, -8 },
+                    { -36, new DateTime(2022, 10, 28, 21, 21, 0, 0, DateTimeKind.Unspecified), 186, -12 },
+                    { -35, new DateTime(2023, 6, 25, 6, 52, 0, 0, DateTimeKind.Unspecified), 149, -3 },
+                    { -34, new DateTime(2023, 8, 19, 23, 43, 0, 0, DateTimeKind.Unspecified), 125, -18 },
+                    { -33, new DateTime(2022, 2, 24, 23, 55, 0, 0, DateTimeKind.Unspecified), 273, -18 },
+                    { -32, new DateTime(2022, 4, 19, 15, 26, 0, 0, DateTimeKind.Unspecified), 192, -5 },
+                    { -31, new DateTime(2023, 1, 11, 0, 29, 0, 0, DateTimeKind.Unspecified), 129, -12 },
+                    { -30, new DateTime(2023, 11, 29, 23, 46, 0, 0, DateTimeKind.Unspecified), 268, -18 },
+                    { -29, new DateTime(2023, 11, 21, 21, 59, 0, 0, DateTimeKind.Unspecified), 174, -17 },
+                    { -28, new DateTime(2022, 1, 30, 17, 38, 0, 0, DateTimeKind.Unspecified), 78, -6 },
+                    { -27, new DateTime(2023, 11, 19, 16, 18, 0, 0, DateTimeKind.Unspecified), 214, -4 },
+                    { -26, new DateTime(2022, 5, 12, 1, 40, 0, 0, DateTimeKind.Unspecified), 163, -11 },
+                    { -25, new DateTime(2022, 8, 19, 5, 14, 0, 0, DateTimeKind.Unspecified), 117, -18 },
+                    { -24, new DateTime(2023, 12, 14, 7, 32, 0, 0, DateTimeKind.Unspecified), 42, -2 },
+                    { -23, new DateTime(2023, 6, 22, 2, 24, 0, 0, DateTimeKind.Unspecified), 281, -14 },
+                    { -22, new DateTime(2023, 7, 19, 0, 54, 0, 0, DateTimeKind.Unspecified), 101, -19 },
+                    { -21, new DateTime(2023, 11, 17, 15, 47, 0, 0, DateTimeKind.Unspecified), 133, -14 },
+                    { -20, new DateTime(2023, 7, 12, 14, 55, 0, 0, DateTimeKind.Unspecified), 158, -5 },
+                    { -19, new DateTime(2022, 4, 25, 15, 34, 0, 0, DateTimeKind.Unspecified), 107, -14 },
+                    { -18, new DateTime(2023, 4, 9, 3, 51, 0, 0, DateTimeKind.Unspecified), 250, -16 },
+                    { -17, new DateTime(2023, 8, 4, 18, 50, 0, 0, DateTimeKind.Unspecified), 119, -8 },
+                    { -16, new DateTime(2023, 10, 25, 19, 33, 0, 0, DateTimeKind.Unspecified), 210, -10 },
+                    { -15, new DateTime(2022, 11, 26, 6, 42, 0, 0, DateTimeKind.Unspecified), 225, -8 },
+                    { -14, new DateTime(2023, 11, 16, 23, 29, 0, 0, DateTimeKind.Unspecified), 293, -12 },
+                    { -13, new DateTime(2022, 6, 4, 10, 39, 0, 0, DateTimeKind.Unspecified), 102, -18 },
+                    { -12, new DateTime(2023, 7, 20, 22, 38, 0, 0, DateTimeKind.Unspecified), 197, -13 },
+                    { -11, new DateTime(2022, 2, 3, 8, 41, 0, 0, DateTimeKind.Unspecified), 264, -7 },
+                    { -10, new DateTime(2022, 4, 2, 3, 53, 0, 0, DateTimeKind.Unspecified), 85, -16 },
+                    { -9, new DateTime(2022, 3, 9, 8, 49, 0, 0, DateTimeKind.Unspecified), 155, -14 },
+                    { -8, new DateTime(2022, 2, 8, 15, 49, 0, 0, DateTimeKind.Unspecified), 119, -20 },
+                    { -7, new DateTime(2023, 8, 25, 2, 54, 0, 0, DateTimeKind.Unspecified), 295, -3 },
+                    { -6, new DateTime(2023, 10, 1, 21, 3, 0, 0, DateTimeKind.Unspecified), 185, -19 },
+                    { -5, new DateTime(2023, 12, 3, 15, 9, 0, 0, DateTimeKind.Unspecified), 171, -17 },
+                    { -4, new DateTime(2022, 12, 8, 5, 47, 0, 0, DateTimeKind.Unspecified), 288, -4 },
+                    { -3, new DateTime(2022, 10, 28, 2, 9, 0, 0, DateTimeKind.Unspecified), 46, -19 },
+                    { -2, new DateTime(2023, 4, 25, 10, 39, 0, 0, DateTimeKind.Unspecified), 209, -7 },
+                    { -1, new DateTime(2023, 7, 10, 3, 15, 0, 0, DateTimeKind.Unspecified), 123, -3 }
                 });
 
             migrationBuilder.InsertData(
@@ -387,26 +385,26 @@ namespace WebEngineering.Migrations
                 columns: new[] { "Id", "Date", "Menge", "ProduktId" },
                 values: new object[,]
                 {
-                    { -20, new DateTime(2022, 4, 1, 21, 33, 0, 0, DateTimeKind.Unspecified), 1374, -2 },
-                    { -19, new DateTime(2023, 4, 30, 13, 39, 0, 0, DateTimeKind.Unspecified), 4634, -8 },
-                    { -18, new DateTime(2022, 9, 29, 12, 24, 0, 0, DateTimeKind.Unspecified), 4839, -11 },
-                    { -17, new DateTime(2022, 3, 21, 17, 37, 0, 0, DateTimeKind.Unspecified), 1261, -10 },
-                    { -16, new DateTime(2022, 10, 25, 12, 5, 0, 0, DateTimeKind.Unspecified), 3328, -20 },
-                    { -15, new DateTime(2023, 4, 7, 15, 17, 0, 0, DateTimeKind.Unspecified), 2672, -17 },
-                    { -14, new DateTime(2023, 1, 1, 3, 23, 0, 0, DateTimeKind.Unspecified), 603, -2 },
-                    { -13, new DateTime(2022, 4, 6, 13, 11, 0, 0, DateTimeKind.Unspecified), 2119, -11 },
-                    { -12, new DateTime(2022, 7, 14, 20, 6, 0, 0, DateTimeKind.Unspecified), 779, -11 },
-                    { -11, new DateTime(2022, 4, 1, 16, 9, 0, 0, DateTimeKind.Unspecified), 4202, -5 },
-                    { -10, new DateTime(2023, 2, 24, 4, 18, 0, 0, DateTimeKind.Unspecified), 3835, -12 },
-                    { -9, new DateTime(2023, 4, 12, 14, 12, 0, 0, DateTimeKind.Unspecified), 1423, -19 },
-                    { -8, new DateTime(2022, 5, 26, 14, 38, 0, 0, DateTimeKind.Unspecified), 1210, -20 },
-                    { -7, new DateTime(2022, 5, 19, 13, 35, 0, 0, DateTimeKind.Unspecified), 2980, -14 },
-                    { -6, new DateTime(2023, 12, 9, 3, 46, 0, 0, DateTimeKind.Unspecified), 3844, -4 },
-                    { -5, new DateTime(2022, 7, 11, 16, 59, 0, 0, DateTimeKind.Unspecified), 2374, -12 },
-                    { -4, new DateTime(2022, 4, 5, 15, 15, 0, 0, DateTimeKind.Unspecified), 1931, -16 },
-                    { -3, new DateTime(2023, 11, 28, 22, 48, 0, 0, DateTimeKind.Unspecified), 4695, -11 },
-                    { -2, new DateTime(2023, 4, 2, 16, 9, 0, 0, DateTimeKind.Unspecified), 4933, -4 },
-                    { -1, new DateTime(2023, 9, 27, 20, 31, 0, 0, DateTimeKind.Unspecified), 3681, -13 }
+                    { -20, new DateTime(2023, 2, 9, 12, 39, 0, 0, DateTimeKind.Unspecified), 4276, -4 },
+                    { -19, new DateTime(2022, 3, 11, 14, 23, 0, 0, DateTimeKind.Unspecified), 4923, -11 },
+                    { -18, new DateTime(2022, 4, 29, 22, 19, 0, 0, DateTimeKind.Unspecified), 3790, -1 },
+                    { -17, new DateTime(2022, 9, 30, 15, 29, 0, 0, DateTimeKind.Unspecified), 1497, -11 },
+                    { -16, new DateTime(2022, 5, 6, 23, 50, 0, 0, DateTimeKind.Unspecified), 643, -16 },
+                    { -15, new DateTime(2022, 3, 22, 13, 17, 0, 0, DateTimeKind.Unspecified), 3678, -5 },
+                    { -14, new DateTime(2022, 11, 23, 23, 58, 0, 0, DateTimeKind.Unspecified), 4483, -14 },
+                    { -13, new DateTime(2023, 9, 24, 21, 25, 0, 0, DateTimeKind.Unspecified), 3494, -11 },
+                    { -12, new DateTime(2022, 4, 26, 0, 11, 0, 0, DateTimeKind.Unspecified), 2507, -11 },
+                    { -11, new DateTime(2023, 7, 29, 9, 58, 0, 0, DateTimeKind.Unspecified), 4202, -1 },
+                    { -10, new DateTime(2022, 1, 19, 1, 54, 0, 0, DateTimeKind.Unspecified), 2188, -3 },
+                    { -9, new DateTime(2022, 10, 19, 5, 8, 0, 0, DateTimeKind.Unspecified), 2434, -9 },
+                    { -8, new DateTime(2022, 12, 28, 9, 7, 0, 0, DateTimeKind.Unspecified), 922, -12 },
+                    { -7, new DateTime(2022, 7, 4, 14, 26, 0, 0, DateTimeKind.Unspecified), 501, -6 },
+                    { -6, new DateTime(2022, 4, 16, 23, 26, 0, 0, DateTimeKind.Unspecified), 4787, -11 },
+                    { -5, new DateTime(2022, 4, 19, 19, 51, 0, 0, DateTimeKind.Unspecified), 942, -17 },
+                    { -4, new DateTime(2022, 6, 20, 8, 40, 0, 0, DateTimeKind.Unspecified), 4682, -19 },
+                    { -3, new DateTime(2022, 10, 18, 18, 23, 0, 0, DateTimeKind.Unspecified), 3494, -16 },
+                    { -2, new DateTime(2022, 8, 28, 14, 8, 0, 0, DateTimeKind.Unspecified), 4533, -12 },
+                    { -1, new DateTime(2023, 12, 2, 14, 59, 0, 0, DateTimeKind.Unspecified), 3932, -8 }
                 });
 
             migrationBuilder.CreateIndex(
