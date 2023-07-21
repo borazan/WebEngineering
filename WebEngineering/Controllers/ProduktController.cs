@@ -30,6 +30,7 @@ namespace WebEngineering.Controllers
                         Problem("Entity set 'IdentityContext.Produkte'  is null.");
         }
 
+        [Authorize(Roles ="Manager")]
         public async Task<IActionResult> InventoryHistory(int? id)
         {
             if (id == null || _context.Produkte == null)
@@ -129,6 +130,7 @@ namespace WebEngineering.Controllers
             return View(viewModel);
         }
 
+        [Authorize(Roles = "Manager")]
         public async Task<IActionResult> ProductAverages()
         {
             if (_context.Produkte == null)

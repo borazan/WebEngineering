@@ -25,7 +25,7 @@
 
         // Add data to the chart
         for (var i = 0; i < datapoints.length; i++) {
-            var date = new Date(datapoints[i].date); // Convert the date string to a Date object
+            var date = new Date(datapoints[i].date);
             var bestand = datapoints[i].bestand;
             data.addRow([date, bestand]);
             console.log(date + bestand)
@@ -33,10 +33,10 @@
 
         var options = {
 
-            title: 'Inventory History',
+            title: viewModel.produkt.name,
             hAxis: {
                 title: 'Date',
-                format: "MMM ''yy" // Customize the date format as needed
+                format: "MMM ''yy" 
             },
             vAxis: {
                 title: 'Bestand'
@@ -49,9 +49,9 @@
                 position: 'none'
             },
             series: {
-                0: { color: '#4285F4' } // Customize the area chart color
+                0: { color: '#4285F4' } 
             },
-            areaOpacity: 0.7 // Set the opacity of the area below the line
+            areaOpacity: 0.7 
         };
 
         var chart = new google.visualization.AreaChart(document.getElementById('areaChart'));

@@ -38,11 +38,6 @@ public class IdentityContext : IdentityDbContext<User>
         user3.PasswordHash = passwordHasher.HashPassword(user3, "demo03");
         builder.Entity<User>().HasData(user3);
 
-        User user4 = new User() { Id = Guid.NewGuid().ToString(), UserName = "demo04@gmail.com" }; // user creation
-        user4.NormalizedUserName = user4.UserName.ToUpper();
-        user4.PasswordHash = passwordHasher.HashPassword(user4, "demo04");
-        builder.Entity<User>().HasData(user4);
-
         User admin = new User() { Id = Guid.NewGuid().ToString(), UserName = "admin@gmail.com" }; // user creation
         admin.NormalizedUserName = admin.UserName.ToUpper();
         admin.PasswordHash = passwordHasher.HashPassword(admin, "admin");
